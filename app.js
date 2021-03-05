@@ -27,7 +27,10 @@ connectDB();
 app.use("/api/task", require("./src/routes/taksRouter"));
 
 //puerto de la app
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log("Corriendo en el Puerto " + PORT);
+
+const host = "0.0.0.0";
+const port = process.env.PORT || 3001;
+
+app.listen(port, host, function () {
+  console.log("Server started.......");
 });
